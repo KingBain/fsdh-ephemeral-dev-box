@@ -1,0 +1,17 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - /home/config:/config
+      - /home/projects:/projects
+    ports:
+      - "80:8443"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: unless-stopped
