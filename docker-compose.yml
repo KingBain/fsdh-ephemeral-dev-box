@@ -12,12 +12,11 @@ services:
       - PWA_APPNAME=Code Server
       - CERTFILE=
       - KEYFILE=
+      - DOCKER_MODS=linuxserver/mods:universal-package-install|linuxserver/mods:code-server-python3
+      - INSTALL_PACKAGES=iputils-ping|dnsutils|tcptraceroute
     volumes:
       - ${WEBAPP_STORAGE_HOME}/config:/config
       - ${WEBAPP_STORAGE_HOME}/projects:/projects
     ports:
       - "3838:8443"
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
     restart: unless-stopped
