@@ -6,9 +6,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
+      - DISABLE_AUTH=false
+      - PROXY_DOMAIN=dev.fsdh-dhsf.science.cloud-nuage.canada.ca
+      - CERTFILE=
+      - KEYFILE=
     volumes:
-      - ./config:/config
-      - ./projects:/projects
+      - ${WEBAPP_STORAGE_HOME}/config:/config
+      - ${WEBAPP_STORAGE_HOME}/projects:/projects
     ports:
       - "3838:8443"
     dns:
