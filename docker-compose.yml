@@ -7,10 +7,10 @@ services:
       - PGID=1000
       - TZ=America/Toronto
     volumes:
-      - /home/config:/config
-      - /home/projects:/projects
+      - ./config:/config
+      - ./projects:/projects
     ports:
-      - "80:8443"
+      - "3838:8443"
     dns:
       - 8.8.8.8
       - 8.8.4.4
