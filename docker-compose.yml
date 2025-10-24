@@ -8,6 +8,8 @@ services:
       - TZ=America/Toronto
       - DISABLE_AUTH=false
       - PROXY_DOMAIN=dev.fsdh-dhsf.science.cloud-nuage.canada.ca
+      - SUDO_PASSWORD=password
+      - PWA_APPNAME=Code Server
       - CERTFILE=
       - KEYFILE=
     volumes:
